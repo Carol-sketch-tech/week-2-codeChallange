@@ -1,0 +1,34 @@
+#container {
+display:center;
+}
+
+#headerSection{
+   background-color: #153448;
+   padding:2px;
+   text-align: center;
+   
+}
+#description{
+background-color:#E88D67;
+color:black;
+padding:5px;
+}
+#table {
+    border:5px solid black;
+    text-align: center;
+}
+#listInput{
+background-color: #948979;
+color:white;
+
+}
+
+#footerSection{
+    background-color:#524C42 ;
+    color:black;
+    display:block;
+    text-align:center;
+    padding:4px;
+
+
+}
