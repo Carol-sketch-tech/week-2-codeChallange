@@ -18,7 +18,7 @@
                 </p>
             </div>
             <!-- DOM node - div that has childrem nodes for the list inputs -->
-            <div id = "list">
+            <div id = "listContainer">
                 <!-- input tag for a list for shoping items.
                  creatinga checkbof for a list of items.
                   -->
@@ -29,8 +29,18 @@
                    <!-- input div for creating a shopping list. -->
                    <div id="inputAndButton">
         <input id="shoppingList" type="text">
-                <button id="button" type="button" onclick="buttonClickEvent()" >Click</button>
+                <button id="addButton" type="button" onclick="buttonClickEvent()" >Add</button>
+                <button id="clearList"  type="button" >Clear List</button>
+                
                 <br><br>
+                <div id="list">
+                    <ol>
+                       <li></li>
+                       <li></li>
+                       <li></li>
+                       <li></li>
+                    </ol>
+                </div>
             </div>
 
 <!--foot section-->
