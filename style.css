@@ -13,6 +13,14 @@ background-color:#E88D67;
 color:black;
 padding:5px;
 }
+#list{
+    padding:10px;
+    height:  auto fit-content;
+    padding: 10px;
+}
+#text{
+    border:none;
+}
 #table {
     border:5px solid black;
     text-align: center;
@@ -26,7 +34,7 @@ color:white;
 #footerSection{
     background-color:#524C42 ;
     color:black;
-    display:block;
+    /* display:block; */
     text-align:center;
     padding:4px;
 

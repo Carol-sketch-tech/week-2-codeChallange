@@ -12,24 +12,28 @@
                     Are planning on going for some shopping today but don't know where to start?<br>
                     Don't worry! List-er's got you covered.<br><br>
 
-                    Lister-er is an app that makes planning and going for shopping so much easier as it easens the process of making a list and marking 
+                    Lister-er is an app that makes preparing a list, planning and going for shopping so much easier as it easens the process of making a list and marking 
                         what has been bought and what is yet to be bought.
                         Start enjoying shoping with list-er as your shoppig partner.
                 </p>
             </div>
             <!-- DOM node - div that has childrem nodes for the list inputs -->
-            <div id = "listInput">
-                <table id="table">
-                    <th>
-                        <tr>
-                            <td>Item</td>
-                        <td>buttons</td>
-                    </tr>
-                    </th>
-<!-- not sure if i should add another row then a list or list first then a row. -->
-                </table>
+            <div id = "list">
+                <!-- input tag for a list for shoping items.
+                 creatinga checkbof for a list of items.
+                  -->
+                 <!-- the input tag is an empty element that only contains attributes-->
+                  <!-- input field to input items on the list -->
+                   <p>Enter your list items below.</p>
 
-<!--  -->
+                   <!-- input div for creating a shopping list. -->
+                   <div id="inputAndButton">
+        <input id="shoppingList" type="text">
+                <button id="button" type="button" onclick="buttonClickEvent()" >Click</button>
+                <br><br>
+            </div>
+
+<!--foot section-->
                 <div id="foot">
                 <div id="footerSection">
                     <p>
@@ -40,6 +44,7 @@
                 </div>
             </div>
             </div>
+            <script type="text/javascript" src="script.js"></script>
         </body>
     </head>
 </html>
