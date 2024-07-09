@@ -1,53 +1,64 @@
-// retireve input value using 
-// parent function.
-function buttonClickEvent(){
-    const buttonEvent=document.getElementById("button")
-    
-function inputToArray(items,shoppingList){
-const listInput=document.getElementById("shoppingList")
-// initialize an empty array.
-let shoppingList= [];
-// to separate items in the input field with commas
- const items= listInput.split(",").map((items));
-//  use of the spread operators makes a clone of the orignal array to not change the original array
-// when new items are moved pushed to the array.
-for(let items of shoppingList){
- shoppingList.push(...items);
- console.log(shoppingList);}
-}
-buttonEvent.addEventListener('click',inputToArray())
-}
-// BEGIN ANOTHER SCOPE CHAIN TO make the code work.
-
-
-// Accessing the Addbutton, creating a callback fucntion and attaching an event listener.
-// accessing the addButton element.
+// initalize empty array
+const ShoppingList =[];
+// accessing DOM nodes using getElementById()
+const inputField=document.getElementById('inputText')
 const addButton=document.getElementById('addButton')
-// creating a callback function,second argument for the addEventListener.
-function AddsItemsFromInputFieldFromHtml(){
-    // code for adding elements from the input field of Html.
+const markAsPurchased=document.getElementById('markAsPurchased')
+const clearButton=document.getElementById('clearList')
+const listOfItems=document.getElementById('resultList')
+
+// adding event listeners to varibale that stores the elemenets
+addButton.addEventListener('click',addItem);
+// event listener for mark as apurchased
+markPurchased.addEventListener('click',markPurchased);
+// event lsitener to celar list
+clearButton.addEventListener('click',clearList);
+
+// function to add an item to the list 
+function addItem(){
+    const item=itemInput.value.trim();
+    if(item!== ""){
+        renderList();
+        itemInput="";    }
 }
-// attaching an event lsitener
-addButton.addEventListener('click',)
 
+// function to mark items as purchased
+function markedPurchased(){
+    const selectefdItems=itemList.querySelelctorAll("li.selected");
 
-// marking bought items to show that they have been bought.we can yse a check list
-// and add an event listener.
-function markItemInListAsBought(){
-    // write code here
+    // looping through the items and mark them as purchased.
+    if (index!== -1){
+        ShoppingList[index]='{${item.textContent}}';
+        renderList();
+    }
 }
-// attaching an eventListener
-.addEventListener('click')
-// how do i add a checkList to mark as tick when an item is bought
 
+// function to clear list 
+function clearList(){
+    // clear shopping list array
+    ShoppingList.length =0
 
+    // clear the list container
+    while(itemList.firstChild){
+        itemList.firstChild.remove();
+    }
 
-// Accessing the clearList id, creating a callback fucntion and attaching an event listener. 
-// attach an event listener to clear the list of items.
-const clearButton =document.getElementById('clearList')
-// creating a callback function.
-function clearListOfItems(){
-// enter code here to clear list.
 }
-// attaching an event listener.
-clearButton.addEventListener('click',)
+
+// fucntion ot render the shopping list
+function renderList(){
+    while(itemList.firstChild){
+        itemList.firstChild.remove();
+    }
+}
+// iterating through the shopping list array and add items to the 
+// list container
+for (const item of ShoppingList){
+  const li=ducument.createElement('li');
+  li.textContent=item.replace(/^{.*}$/g,"");
+  if (item.includes('{')){
+    li.classList.add("selected");
+  }
+}
+
+renderList()

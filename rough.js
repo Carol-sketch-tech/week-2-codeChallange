@@ -1,71 +1,3 @@
-let books = ["eloquent in javasript","javascript",
-    "mill and boons","perfect stranger","shutter island"
-]
-let oneBook ={
-    title:"eloquent javascript",
-    author:"melisa i dont know her last name",
-    publisher:"no starch press house"
-}
-function loolpThorughBooks(books){
-    for( let i = 0;i< books.length;i++){
-        // this is where the statements goes.
-        // console.log(i < 7)
-        // console.log(i)
-        // the console.log uses [i] to access the book array using the bracket notation.
-        console.log(books[i])
-    }
-   
-}
-
-
-loolpThorughBooks(books)
-console.log(books.length);
-
-//  for ... loop has the following 
-/*
-1. initializer- a varibale decalred when the loop begins
-2.condition - stop consition
-3. final expression- last step of iteration
-4.statement- what happens during each iteration */ 
-
-// FOR... OF 
-function loopThroughBooksArray(books){
-    // a for of is someting that allows us to iterate loop through any iterable object.
-    // unlike the for ... loop, the for .. of automatically stops at teh end of the item its looping over. therfore 
-    // no last part to increamnet. 
-    for(let book of books){
-        console.log(book)
-
-    }
-}
-//  for ...in loop
-function loopThroughObject(obj){
-    for ( let key in obj){
-        // accessing the keys in the object oneBook.
-        console.log(key)
-        // accession values in a object we use bracket notation instead of 
-        // dot notation.
-        console.log(obj[key])
-    }
-
-}
-
-loopThroughObject(oneBook)
-
-// shoppingList[x]=document.getElementsById("textlist").value;
-// return `${shoppingList[x]}`;
-// x++;
-// ;
-
-for (let item of array){
-    shoppingList.push(item)
-}
-console.log(shoppingList);
-
-
-
-
-
 // parent function
 // function displayList(){
 
@@ -116,3 +48,85 @@ console.log(shoppingList);
 //      myArray.push()
 // }
 // this is to console.log the new array that has the added items that are to be displayed in the shoping list.
+
+
+// // retireve input value using 
+// // parent function.
+// function buttonClickEvent(){
+//     const buttonEvent=document.getElementById("button")
+    
+// function inputToArray(items,shoppingList){
+// const listInput=document.getElementById("shoppingList")
+// // initialize an empty array.
+// let shoppingList= [];
+// // to separate items in the input field with commas
+//  const items= listInput.split(",").map((items));
+// //  use of the spread operators makes a clone of the orignal array to not change the original array
+// // when new items are moved pushed to the array.
+// for(let items of shoppingList){
+//  shoppingList.push(...items);
+//  console.log(shoppingList);}
+// }
+// buttonEvent.addEventListener('click',inputToArray())
+// }
+// BEGIN ANOTHER SCOPE CHAIN TO make the code work.
+
+// initalizing an empty array.
+const myArray=[]
+// access the id inputText
+const input=document.getElementById("inputText")
+// accessing hte id result
+const results=document.getElementById('resultList')
+// Accessing the Addbutton, creating a callback fucntion and attaching an event listener.
+const markAsBought =document.getElementById('markAsPurchased')
+
+
+function thatCreatesAnewArray(){
+    // inputValue stores text put in the input field and stores it in the variable inputValue
+    const inputValue=input.value
+    // creates a new array by retrieving the current value in a form.
+   return myArray.push(inputValue)
+}
+// accessing the addButton element.
+const addButton=document.getElementById('addButton').addEventListener('click',thatCreatesAnewArray)
+// creating a display Array
+function displayNewArray(){
+    let output='';
+    for (let i =0; i< myArray.length; i++){
+        
+    }
+    results.innerHTML= output;
+}
+// creating a callback function,second argument for the addEventListener.
+// function AddsItemsFromInputFieldFromHtmlAndDisplay(){
+// let output = 
+// // code for adding elements from the input field of Html.
+
+// }
+// // // attaching an event lsitener
+// addButton.addEventListener('click',)
+
+
+// // marking bought items to show that they have been bought.we can yse a check list
+// // and add an event listener.
+function markAsPurchased(){
+    // write code here
+}
+// attaching an eventListener
+markAsPurchased.addEventListener('click',markAsPurchased)
+// how do i add a checkList to mark as tick when an item is bought
+
+
+
+// Accessing the clearList id, creating a callback fucntion and attaching an event listener. 
+// attach an event listener to clear the list of items.
+const clearButton =document.getElementById('clearList').addEventListener('click',function (){
+    const removeFromList=document.getElementById('inputText').remove;
+    return
+})
+// creating a callback function.
+function clearListOfItems(){
+// // enter code here to clear list.
+}
+// attaching an event listener.
+clearButton.addEventListener('click',)

@@ -28,18 +28,14 @@
 
                    <!-- input div for creating a shopping list. -->
                    <div id="inputAndButton">
-        <input id="shoppingList" type="text">
-                <button id="addButton" type="button" onclick="buttonClickEvent()" >Add</button>
+        <input id="inputText" placeholder="enter item">
+                <button id="addButton" type="button"  >Add</button>
+                <button id="markAsPurchased" type="button">Mark purchased</button>
                 <button id="clearList"  type="button" >Clear List</button>
                 
                 <br><br>
-                <div id="list">
-                    <ol>
-                       <li></li>
-                       <li></li>
-                       <li></li>
-                       <li></li>
-                    </ol>
+                <ul id="resultList"></ul>
+                    
                 </div>
             </div>
 
@@ -54,7 +50,7 @@
                 </div>
             </div>
             </div>
-            <script type="text/javascript" src="script.js"></script>
+            <script type="text/javascript" src="script2.js"></script>
         </body>
     </head>
 </html>
