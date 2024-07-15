@@ -1,64 +1,34 @@
-// initalize empty array
-const ShoppingList =[];
-// accessing DOM nodes using getElementById()
-const inputField=document.getElementById('inputText')
-const addButton=document.getElementById('addButton')
-const markAsPurchased=document.getElementById('markAsPurchased')
-const clearButton=document.getElementById('clearList')
-const listOfItems=document.getElementById('resultList')
+// initalize an empty array 
+const emptyArray=[];
 
-// adding event listeners to varibale that stores the elemenets
-addButton.addEventListener('click',addItem);
-// event listener for mark as apurchased
-markPurchased.addEventListener('click',markPurchased);
-// event lsitener to celar list
-clearButton.addEventListener('click',clearList);
-
-// function to add an item to the list 
-function addItem(){
-    const item=itemInput.value.trim();
-    if(item!== ""){
-        renderList();
-        itemInput="";    }
+// code to display items in input field in a list.
+const input=document.querySelector("input#inputText")
+const resultList=document.createElement('li')
+function displayInputValue(){ 
+ const pushedItems = emptyArray.push(input.value);
+ function displayInresultListDiv(item){
+    
+    resultList.textContent=item;
+    resultList.item(pushedItems);
+ }
+ console.log(displayInresultListDiv);
 }
+const addButton=document.querySelector("button#addButton").addEventListener('click',displayInputValue);
 
-// function to mark items as purchased
-function markedPurchased(){
-    const selectefdItems=itemList.querySelelctorAll("li.selected");
-
-    // looping through the items and mark them as purchased.
-    if (index!== -1){
-        ShoppingList[index]='{${item.textContent}}';
-        renderList();
-    }
+// function to mark list as purchased.
+const markedAsPurchased=document.querySelector("button#markedAaPurchased");
+// function to mark items in list as purchased.
+function markedAsPurchased(){
+ resultList.classList.toogle('purchased')
 }
+markedAsPurchased.addEventListener('click',markedAsPurchased);
 
-// function to clear list 
+// code to clear the list 
+const clearList=document.querySelector("button#clearList");
+const shoppingList= document.querySelector("resultList")
+// fucntion to clear list after being purchased.
 function clearList(){
-    // clear shopping list array
-    ShoppingList.length =0
-
-    // clear the list container
-    while(itemList.firstChild){
-        itemList.firstChild.remove();
-    }
-
+    emptyArray.length=0;
+    shoppingList.innerHtml='';
 }
-
-// fucntion ot render the shopping list
-function renderList(){
-    while(itemList.firstChild){
-        itemList.firstChild.remove();
-    }
-}
-// iterating through the shopping list array and add items to the 
-// list container
-for (const item of ShoppingList){
-  const li=ducument.createElement('li');
-  li.textContent=item.replace(/^{.*}$/g,"");
-  if (item.includes('{')){
-    li.classList.add("selected");
-  }
-}
-
-renderList()
+clearList.addEventListener('click',clearList);

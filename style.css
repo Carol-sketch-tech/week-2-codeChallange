@@ -37,6 +37,8 @@ color:white;
     /* display:block; */
     text-align:center;
     padding:4px;
-
-
+}
+.purchased {
+    text-decoration: line-through;
+    background-color: #d3d3d3;
 }
