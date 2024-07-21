@@ -21,16 +21,17 @@ padding:5px;
 #text{
     border:none;
 }
-#table {
+/* #table {
     border:5px solid black;
     text-align: center;
-}
+} */
 #listInput{
 background-color: #948979;
 color:white;
-
 }
-
+#resultList{
+    height: auto;
+}
 #footerSection{
     background-color:#524C42 ;
     color:black;
