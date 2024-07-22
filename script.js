@@ -1,34 +1,68 @@
-// initalize an empty array 
-const emptyArray=[];
+const shopInput = document.getElementById('inputText')  
+const clearButton = document.getElementsByClassName('clearList') [0]
+const shopList = document.getElementById('shopList') 
+const addButton = document.getElementsByClassName('addButton')[0] 
+//creates an empty array where items are pushed.
+let shoppingArray = [] 
+// adding shopping list
+function addshopping(){
+     //creates an initial empty shopping list
+  shopList.innerHTML = ''
+// iterates through each object in the list.
+  shoppingArray.forEach( 
+    function(item,index){// 'itemName'a span for the name of the item, 'deleteButton' and 'purchased button'
 
-// code to display items in input field in a list.
-const input=document.querySelector("input#inputText")
-const resultList=document.createElement('li')
-function displayInputValue(){ 
- const pushedItems = emptyArray.push(input.value);
- function displayInresultListDiv(item){
+// creating DOM nodes of display results.
+       const li = document.createElement('li')
+       const itemName = document.createElement('span')
+       const deleteButton = document.createElement('button')
+       const purchasedButton = document.createElement('button')
     
-    resultList.textContent=item;
-    resultList.item(pushedItems);
- }
- console.log(displayInresultListDiv);
-}
-const addButton=document.querySelector("button#addButton").addEventListener('click',displayInputValue);
+     
+itemName.textContent = item.name // text content to be stored in name object
+deleteButton.textContent = 'delete'
+deleteButton.className = 'deleteButton'
+purchasedButton.textContent = item.purchased ? 'purchased' : 'mark purchased'//checks whether item.purchased is true if it is true
+//then text will be purchased otherwise it will remain mark purchased
+purchasedButton.className = 'purchased'
+deleteButton.style.marginLeft = '350px'
 
-// function to mark list as purchased.
-const markedAsPurchased=document.querySelector("button#markedAaPurchased");
-// function to mark items in list as purchased.
-function markedAsPurchased(){
- resultList.classList.toogle('purchased')
+if(item.purchased){          
+   li.classList.add('purchased')
 }
-markedAsPurchased.addEventListener('click',markedAsPurchased);
+// append to DOM
+li.appendChild(itemName)
+li.appendChild(deleteButton)
+li.appendChild(purchasedButton)
+shopList.appendChild(li)
 
-// code to clear the list 
-const clearList=document.querySelector("button#clearList");
-const shoppingList= document.querySelector("resultList")
-// fucntion to clear list after being purchased.
-function clearList(){
-    emptyArray.length=0;
-    shoppingList.innerHtml='';
-}
-clearList.addEventListener('click',clearList);
+// adding eventListeners for purchasd items.
+purchasedButton.addEventListener('click',function(){
+   shoppingArray[index].purchased = !shoppingArray[index].purchased
+   addshopping()
+})
+// adding an event listener for deleting an item.
+deleteButton.addEventListener('click',function(){
+   shoppingArray.splice(index,1)
+   addshopping()
+})})}
+function additems(){
+    const inputValue = shopInput.value.trim()
+    if(inputValue === ''){
+        return
+    }
+    // pushing object into the an Empty array
+    shoppingArray.push({ 
+       name:inputValue,
+       purchased:false  
+    })
+     // empties the input
+    shopInput.value = ''
+    addshopping()}
+//  function that clear the whole list
+ function clearList(){
+    shoppingArray = [] 
+    addshopping()}
+ addButton.addEventListener('click',additems)
+ clearButton.addEventListener('click',clearList) 
+ 
