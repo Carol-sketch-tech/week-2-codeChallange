@@ -1,6 +1,6 @@
 const shopInput = document.getElementById('inputText')  
 const clearButton = document.getElementsByClassName('clearList') [0]
-const shopList = document.getElementById('shopList') 
+const shopList = document.getElementById('resultList') 
 const addButton = document.getElementsByClassName('addButton')[0] 
 //creates an empty array where items are pushed.
 let shoppingArray = [] 

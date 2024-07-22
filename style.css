@@ -40,6 +40,6 @@ color:white;
     padding:4px;
 }
 .purchased {
-    text-decoration: line-through;
-    background-color: #d3d3d3;
+    /* text-decoration: line-through; */
+    background-color: #eb1717;
 }
